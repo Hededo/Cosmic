@@ -7,14 +7,14 @@ worlds:
     server_message: Welcome to Scania!
     event_message: Scania!
     why_am_i_recommended: Welcome to Scania!
-    channels: 3
-    exp_rate: 10
-    meso_rate: 10
-    drop_rate: 10
-    boss_drop_rate: 10                      #NOTE: Boss drop rate OVERRIDES common drop rate, for bosses-only.
+    channels: 2
+    exp_rate: 4
+    meso_rate: 2
+    drop_rate: 1
+    boss_drop_rate: 3                      #NOTE: Boss drop rate OVERRIDES common drop rate, for bosses-only.
     quest_rate: 5                           #Multiplier for Exp & Meso gains when completing a quest. Only available when USE_QUEST_RATE is true. Stacks with server Exp & Meso rates.
     fishing_rate: 10                        #Multiplier for success likelihood on meso thrown during fishing.
-    travel_rate: 10                         #Means of transportation rides/departs using 1/N of the default time.
+    travel_rate: 2                         #Means of transportation rides/departs using 1/N of the default time.
 
     #Properties for Bera 1
   - flag: 0
@@ -167,8 +167,8 @@ server:
 
     #Login Configuration
     WORLDS: 1                           #Initial number of worlds on the server.
-    WLDLIST_SIZE: 21                    #Max possible worlds on the server.
-    CHANNEL_SIZE: 20                    #Max possible channels per world (which is 20, based on the channel list on login phase).
+    WLDLIST_SIZE: 3                    #Max possible worlds on the server.
+    CHANNEL_SIZE: 5                    #Max possible channels per world (which is 20, based on the channel list on login phase).
     CHANNEL_LOAD: 100                   #Max players per channel (limit actually used to calculate the World server capacity).
     CHANNEL_LOCKS: 20                   #Total number of structure management locks each channel has.
 
@@ -240,7 +240,7 @@ server:
     USE_ENFORCE_ADMIN_ACCOUNT: false    #Forces accounts having GM characters to be treated as a "GM account" by the client (localhost). Some of the GM account perks is the ability to FLY, but unable to TRADE.
     USE_ENFORCE_NOVICE_EXPRATE: false    #Hardsets experience rate 1x for beginners level 10 or under. Ideal for roaming on novice areas without caring too much about losing some stats.
     USE_ENFORCE_HPMP_SWAP: false        #Forces players to reuse stats (via AP Resetting) located on HP/MP pool only inside the HP/MP stats.
-    USE_ENFORCE_MOB_LEVEL_RANGE: true   #Players N levels below the killed mob will gain no experience from defeating it.
+    USE_ENFORCE_MOB_LEVEL_RANGE: false   #Players N levels below the killed mob will gain no experience from defeating it.
     USE_ENFORCE_JOB_LEVEL_RANGE: false  #Caps the player level on the minimum required to advance their current jobs.
     USE_ENFORCE_JOB_SP_RANGE: false     #Caps the player SP level on the total obtainable by their current jobs. After changing jobs, missing SP will be retrieved.
     USE_ENFORCE_ITEM_SUGGESTION: false  #Forces the Owl of Minerva and the Cash Shop to always display the defined item array instead of those featured by the players.
@@ -258,8 +258,9 @@ server:
     USE_MULTIPLE_SAME_EQUIP_DROP: true  #Enables multiple drops by mobs of the same equipment, number of possible drops based on the quantities provided at the drop data.
     USE_ENABLE_FULL_RESPAWN: false       #At respawn task, always respawn missing mobs when they're available. Spawn count doesn't depend on how many players are currently there.
     USE_ENABLE_CHAT_LOG: false          #Write in-game chat to log
+    USE_REBIRTH_SYSTEM: true           #Flag to enable/disable rebirth system
     USE_MAP_OWNERSHIP_SYSTEM: false      #Flag to enable/disable map ownership system
-    USE_FISHING_SYSTEM: false            #Flag to enable/disable custom fishing system
+    USE_FISHING_SYSTEM: true            #Flag to enable/disable custom fishing system
     USE_NPCS_SCRIPTABLE: true           #Flag to enable/disable serverside predefined script NPCs.
 
     #Events/PQs Configuration
@@ -270,8 +271,7 @@ server:
 
     #Announcement Configuration
     USE_ANNOUNCE_SHOPITEMSOLD: false    #Automatic message sent to owner when an item from the Player Shop or Hired Merchant is sold.
-    USE_ANNOUNCE_CHANGEJOB: false       #Automatic message sent to acquantainces when changing jobs.
-    USE_ANNOUNCE_NX_COUPON_LOOT: false    #Enables or disables the floating text when a player loots a NX card
+    USE_ANNOUNCE_CHANGEJOB: true       #Automatic message sent to acquantainces when changing jobs.
 
     #Cash Shop Configuration
     USE_JOINT_CASHSHOP_INVENTORY: false  #Enables usage of a same cash shop inventory for explorers, cygnus and legends. Items from exclusive cash shop inventories won't show up on the shared inventory, though.
@@ -284,21 +284,21 @@ server:
     USE_MAKER_FEE_HEURISTICS: true      #Apply compiled values for stimulants and reagents into the Maker fee calculations (max error revolves around 50k mesos). Set false to use basic constant values instead (results are never higher than requested by the client-side).
 
     #Custom Configuration
-    USE_ENABLE_CUSTOM_NPC_SCRIPT: false  #Enables usage of custom HeavenMS NPC scripts (Agent E, Coco, etc). Will not disable Abdula (it's actually useful for the gameplay) or quests.
+    USE_ENABLE_CUSTOM_NPC_SCRIPT: true  #Enables usage of custom HeavenMS NPC scripts (Agent E, Coco, etc). Will not disable Abdula (it's actually useful for the gameplay) or quests.
     USE_STARTER_MERGE: false            #Allows any players to use the Equipment Merge custom mechanic (as opposed to the high-level, Maker lv3 requisites).
 
     #Commands Configuration
     BLOCK_GENERATE_CASH_ITEM: false     #Prevents creation of cash items with the item/drop command.
     USE_WHOLE_SERVER_RANKING: false     #Enables a ranking pool made from every character registered on the server for the "ranks" command, instead of separated by worlds.
 
-    EQUIP_EXP_RATE: 1.0                  #Rate for equipment exp gain, grows linearly. Set 1.0 for default (about 100~200 same-level range mobs killed to pass equip from level 1 to 2).
-    PQ_BONUS_EXP_RATE: 0.5               #Rate for the PQ exp reward.
+    EQUIP_EXP_RATE: 0.5                  #Rate for equipment exp gain, grows linearly. Set 1.0 for default (about 100~200 same-level range mobs killed to pass equip from level 1 to 2).
+    PQ_BONUS_EXP_RATE: 4.0               #Rate for the PQ exp reward.
 
-    EXP_SPLIT_LEVEL_INTERVAL: 5            #Non-contributing players must be within N level between the mob to receive EXP.
-    EXP_SPLIT_LEECH_INTERVAL: 5            #Non-contributing players must be within N level between any contributing party member to receive EXP.
+    EXP_SPLIT_LEVEL_INTERVAL: 70            #Non-contributing players must be within N level between the mob to receive EXP.
+    EXP_SPLIT_LEECH_INTERVAL: 70            #Non-contributing players must be within N level between any contributing party member to receive EXP.
     EXP_SPLIT_MVP_MOD: 0.2
     EXP_SPLIT_COMMON_MOD: 0.8
-    PARTY_BONUS_EXP_RATE: 1.0            #Rate for the party exp bonus reward.
+    PARTY_BONUS_EXP_RATE: 4.0            #Rate for the party exp bonus reward.
 
     #Miscellaneous Configuration
     TIMEZONE: GMT
@@ -356,10 +356,10 @@ server:
     USE_FAST_REUSE_HERO_WILL: false  #Greatly reduce cooldown on Hero's Will.
     USE_ANTI_IMMUNITY_CRASH: false   #Crash skills additionally removes the mob's invincibility buffs. Suggestion thanks to Celestial.
     USE_UNDISPEL_HOLY_SHIELD: false  #Holy shield buff also prevents players from suffering dispel from mobs.
-    USE_FULL_HOLY_SYMBOL: false      #Holy symbol doesn't require EXP sharers to work in full.
+    USE_FULL_HOLY_SYMBOL: true      #Holy symbol doesn't require EXP sharers to work in full.
 
     #Character Configuration
-    USE_ADD_SLOTS_BY_LEVEL: false    #Slots are added each 20 levels.
+    USE_ADD_SLOTS_BY_LEVEL: true    #Slots are added each 20 levels.
     USE_ADD_RATES_BY_LEVEL: false    #Rates are added each 20 levels.
     USE_STACK_COUPON_RATES: false   #Multiple coupons effects builds up together.
     USE_PERFECT_PITCH: false         #For lvl 30 or above, each lvlup grants player 1 perfect pitch.
@@ -393,7 +393,7 @@ server:
     USE_EQUIPMNT_LVLUP_CASH: false   #Enable equip leveling up on cash equipments as well.
     MAX_EQUIPMNT_LVLUP_STAT_UP: 10000   #Max stat upgrade an equipment can have on a levelup.
     MAX_EQUIPMNT_STAT: 32767            #Max stat on an equipment by leveling up.
-    USE_EQUIPMNT_LVLUP: 1               #All equips lvlup at max level of N, set 1 to disable.
+    USE_EQUIPMNT_LVLUP: 3               #All equips lvlup at max level of N, set 1 to disable.
 
     #Map-Chair Configuration
     USE_CHAIR_EXTRAHEAL: false       #Enable map chairs to further recover player's HP and MP (player must have the Chair Mastery skill).
@@ -428,7 +428,7 @@ server:
     EVENT_LOBBY_DELAY: 10              #Cooldown duration in seconds before reopening an event lobby.
 
     #Dojo Configuration
-    USE_FAST_DOJO_UPGRADE: false     #Reduced Dojo training points amount required for a belt upgrade.
+    USE_FAST_DOJO_UPGRADE: true     #Reduced Dojo training points amount required for a belt upgrade.
     USE_DEADLY_DOJO: true          #Should bosses really use 1HP,1MP attacks in dojo?
     DOJO_ENERGY_ATK: 100                #Dojo energy gain when deal attack
     DOJO_ENERGY_DMG: 20                #Dojo energy gain when recv attack
