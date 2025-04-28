@@ -1,0 +1,13 @@
+INSERT INTO `drop_data_global` (`id`, `continent`, `itemid`, `minimum_quantity`, `maximum_quantity`, `questid`, `chance`, `comments`) VALUES (25, -1, 4031757, 1, 1, 0, 100, 'Antellion Relic');
+INSERT INTO `drop_data_global` (`id`, `continent`, `itemid`, `minimum_quantity`, `maximum_quantity`, `questid`, `chance`, `comments`) VALUES (25, -1, 4031754, 1, 1, 0, 100, 'Black Versal Materia');
+INSERT INTO `drop_data_global` (`id`, `continent`, `itemid`, `minimum_quantity`, `maximum_quantity`, `questid`, `chance`, `comments`) VALUES (25, -1, 4031752, 1, 1, 0, 100, 'Blinking Dingbat');
+INSERT INTO `drop_data_global` (`id`, `continent`, `itemid`, `minimum_quantity`, `maximum_quantity`, `questid`, `chance`, `comments`) VALUES (25, -1, 4031750, 1, 1, 0, 100, 'Dark Matter');
+INSERT INTO `drop_data_global` (`id`, `continent`, `itemid`, `minimum_quantity`, `maximum_quantity`, `questid`, `chance`, `comments`) VALUES (25, -1, 4031756, 1, 1, 0, 100, 'Mystic Astrolabe');
+INSERT INTO `drop_data_global` (`id`, `continent`, `itemid`, `minimum_quantity`, `maximum_quantity`, `questid`, `chance`, `comments`) VALUES (25, -1, 4031758, 1, 1, 0, 100, 'Naricain Jewel');
+INSERT INTO `drop_data_global` (`id`, `continent`, `itemid`, `minimum_quantity`, `maximum_quantity`, `questid`, `chance`, `comments`) VALUES (25, -1, 4031759, 1, 1, 0, 100, 'Subani Ankh');
+INSERT INTO `drop_data_global` (`id`, `continent`, `itemid`, `minimum_quantity`, `maximum_quantity`, `questid`, `chance`, `comments`) VALUES (25, -1, 4031755, 1, 1, 0, 100, 'Taru Totem');
+INSERT INTO `drop_data_global` (`id`, `continent`, `itemid`, `minimum_quantity`, `maximum_quantity`, `questid`, `chance`, `comments`) VALUES (25, -1, 4031760, 1, 1, 0, 100, 'White Versal Materia');
+INSERT INTO `drop_data_global` (`id`, `continent`, `itemid`, `minimum_quantity`, `maximum_quantity`, `questid`, `chance`, `comments`) VALUES (25, -1, 4031753, 1, 1, 0, 100, 'Zeta Residue');
+INSERT INTO `drop_data_global` (`id`, `continent`, `itemid`, `minimum_quantity`, `maximum_quantity`, `questid`, `chance`, `comments`) VALUES (25, -1, 4031913, 1, 1, 0, 100, 'Stone Tiger Head');
+INSERT INTO `drop_data_global` (`id`, `continent`, `itemid`, `minimum_quantity`, `maximum_quantity`, `questid`, `chance`, `comments`) VALUES (25, -1, 4031915, 1, 1, 0, 100, 'LeFay Jewel');
+INSERT INTO `drop_data_global` (`id`, `continent`, `itemid`, `minimum_quantity`, `maximum_quantity`, `questid`, `chance`, `comments`) VALUES (25, -1, 4031916, 1, 1, 0, 100, 'Pharoah’s Wrappings');

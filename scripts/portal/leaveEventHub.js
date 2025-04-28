@@ -1,12 +1,12 @@
 // Script For Event Hub Map
-var amherstMapId = 1000000;
-var heneHunting1MapId = 104040000;
+var southperryMapId = 2000000;
+var henesys = 100000000;
 
 function enter(client) {
     var player = client.getPlayer();
-    if (player.getJobStyle().getId() == 0) {
-        player.changeMap(amherstMapId);
+    if (player.getJobStyle().getId() === 0) {
+        player.changeMap(southperryMapId);
     } else {
-        player.changeMap(heneHunting1MapId);
+        player.changeMap(henesys);
     }
 }
