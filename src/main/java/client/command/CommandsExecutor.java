@@ -151,6 +151,7 @@ import client.command.commands.gm3.TimerCommand;
 import client.command.commands.gm3.TimerMapCommand;
 import client.command.commands.gm3.ToggleCouponCommand;
 import client.command.commands.gm3.UnBanCommand;
+import client.command.commands.gm3.LevelUpCharCommand;
 import client.command.commands.gm4.BossDropRateCommand;
 import client.command.commands.gm4.CakeCommand;
 import client.command.commands.gm4.DropRateCommand;
@@ -490,6 +491,7 @@ public class CommandsExecutor {
         addCommand("timerall", 3, TimerAllCommand.class);
         addCommand("warpmap", 3, WarpMapCommand.class);
         addCommand("warparea", 3, WarpAreaCommand.class);
+        addCommand("levelupchar", 3, LevelUpCharCommand.class);
 
         commandsNameDesc.add(levelCommandsCursor);
     }
